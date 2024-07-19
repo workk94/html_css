@@ -1,0 +1,50 @@
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘할일</title>
+    <style>
+        #mydiv{
+            border: 1px solid;
+            display: inline-block;
+        }
+        section{
+            display: flex;
+            justify-content: center;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <h1>텍스트 추가</h1>
+    <label for="text">텍스트 입력</label>
+    <input id="text" type="text" value="">
+    <button onclick="addContents()">추가</button>
+    <hr>
+    <section id="info">
+        <div id="mydiv"></div>
+    </section>
+    <script>
+        function addContents(){
+            let newDIV = document.createElement("div");
+            let text = document.getElementById("text").value;
+            newDIV.setAttribute("id", "mydiv")
+            let textNode = document.createTextNode(text);
+            newDIV.appendChild(textNode);
+            document.getElementById("info").appendChild(newDIV);
+        }
+
+        
+        let myDiv = querySelector("#mydiv");
+
+        myDiv.addEventListener("onclick", ) function(){
+            let myDiv = document.getElementById("mydiv");
+            let parent = myDiv.parentElement;
+            concole.log(parentElement);
+            parent.removeChild(myDiv); 
+        }
+        
+    </script>
+</body>
+</html>

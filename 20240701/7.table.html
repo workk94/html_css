@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+          width: 200px;
+          height: 200px;
+        }
+      </style>
+</head>
+<body>
+    <table border>
+        <caption>색깔의 종류</caption>
+        <thead>
+            <tr>
+                <td>종류</td><td>밝은계열</td><td>파스텔</td><td>어두운계열</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td><td>빨강</td><td>분홍색</td><td>검정</td>
+            </tr>
+            <tr>
+                <td>2</td><td>파랑</td><td>하늘색</td><td>남색</td>
+            </tr>
+            <tr>
+                <td>3</td><td>연보라색</td><td>연보라색</td><td>회색</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>합계</td><td>3개</td><td>3개</td><td>3개</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- 표의 끝 -->
+    <h3>상품구성</h3>
+    <table border>
+        <caption>실속형과 고급형 상품 구성</caption>
+        <thead>
+            <tr style="background-color: rgb(236, 223, 234);">
+                <th>용도</th><th>중량</th><th>개수</th><th>가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: rgb(204, 167, 204);">
+                <td rowspan="2">실속형</td><td>3kg</td><td>11*16과</td><td>17,000원</td>
+            </tr>
+            <tr style="background-color: rgb(236, 223, 234);">
+                <td>5kg</td><td>18*25과</td><td>25,000원</td>
+            </tr>
+            <tr style="background-color: rgb(204, 167, 204);">
+                <td rowspan="2">고급형</td><td>3kg</td><td>11*16과</td><td>28,000원</td>
+            </tr>
+            <tr style="background-color: rgb(236, 223, 234);">
+                <td>5kg</td><td>18*25과</td><td>47,000원</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>표에 이미지 삽입</h3>
+
+    <hr>
+    <!-- 예제2-17 --> 
+
+    <table>
+      <caption>좋아하는 과일</caption>
+      <tbody>
+        <tr>
+          <td><img src="../images/apple.jpg" alt=""></td>
+          <td><img src="../images/banana.jpg" alt=""></td>
+          <td><img src="../images/mango.jpg" alt=""></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table border>
+        <caption>색깔의 종류</caption>
+        <thead>
+            <tr>
+                <th>종류</th><th colspan="2" style="background-color: yellowgreen;">밝은계열</th><th>어두운계열</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td><td>빨강</td><td>분홍색</td><td>검정</td>
+            </tr>
+            <tr>
+                <td>2</td><td>파랑</td><td rowspan="2" style="background-color: lightblue;">하늘색</td><td>남색</td>
+            </tr>
+            <tr>
+                <td>3</td><td>연보라색</td><td>회색</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>합계</td><td>3개</td><td>3개</td><td>3개</td>
+            </tr>
+        </tfoot>
+    </table>
+    
+    <!-- 
+        table 표 전체를 담는 컨테이너
+        caption 표 제목
+        thead 헤딩 셀 그룹
+        tfoot 바닥 셀 그룹
+        tbody 데이터 셀 그룹 
+        tr 행, 여러 개의 td, th 포함 
+        th 제목(헤딩) 셀 : 두꺼운 글꼴
+        td 데이터 셀(칸)
+    -->
+
+</body>
+</html>

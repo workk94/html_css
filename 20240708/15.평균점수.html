@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            background-color: olivedrab;
+            color: whitesmoke;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 검사 단축키 F12 of Ctrl+Shift+I -->
+    <script>
+        // let num = 0;
+        // if (num % 2 === 0){
+        //     console.log("even number");
+        // } else {
+        //     console.log("odd10 number");
+        // }88
+
+        // 문자형을 숫자형으로 형변환
+        // Number 
+        // parseInt(radix, base)
+        // parseFloat()
+        let kor = Number(prompt("국어점수를 입력하세요", ""));
+        let math = Number(prompt("수학점수를 입력하세요", ""));
+        let eng = Number(prompt("영어점수를 입력하세요", ""));
+
+        let avg = (kor + math + eng) / 3;
+
+        document.write("<h1>평균점수는 " + avg + "</h1>");
+        if (avg >= 90){
+            let message = "A"
+            document.write("<h1>" + message + "학점입니다.</h1>");
+        } else if (avg >= 80){
+            let message = "B"
+            document.write("<h1>" + message + "학점입니다.</h1>");
+        } else if (avg >= 70){
+            let message = "C"
+            document.write("<h1>" + message + "학점입니다.</h1>");
+        } else {
+            let message = "F"
+            document.write("<h1>" + message + "학점입니다.</h1>");
+        }
+    </script>
+</body>
+</html>

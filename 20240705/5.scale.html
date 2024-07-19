@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scale 스케일 크기조절</title>
+    <style>
+        .origin {
+            border: 1px solid;
+            width: 300px;
+            margin: 50px; /* 두개가 붙어있을때 마진이 100이 아니라 50 */
+        }
+        .scalex:hover {
+            transform: scaleX(1.2); /* 가로로 1.2배 확대 */
+        }
+        .scaley:hover {
+            transform: scaleY(1.5); /* 세로로 1.5배 확대 */
+        }
+        .scale:hover {
+            transform: scale(0.7); /* 가로세로 0.7배 축소 */
+        }
+    </style>
+</head>
+<body>
+    <div class="origin">
+        <div class="scalex"><img src="../images/Google-logo.png" width="300px"></div>
+    </div>
+    <div class="origin">
+        <div class="scaley"><img src="../images/Google-logo.png" width="300px"></div>
+    </div>
+    <div class="origin">
+        <div class="scale"><img src="../images/Google-logo.png" width="300px"></div>
+    </div>
+</body>
+</html>

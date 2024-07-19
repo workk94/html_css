@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로컬 스토리지</title>
+</head>
+<body>
+    <div id="container">
+        <h1>할 일 목록</h1>
+        <p>해야할 일들을 기록하기</p>
+        <form>
+            <input type="text" id="item" onload="" autofocus>
+            <button id="add" class="addBtn">추가하기</button>
+        </form>
+        <!-- 표시할 영역 -->
+        <div id="itemList"></div>
+    </div>
+
+    <script>
+        const $form = document.querySelector("form");
+        $form.addEventListener("submit", (event) => {
+        // 동작(이벤트)을 실행하지 못하게 막는 메서드입니다.
+            event.preventDefault();
+        // console.log(event, target);
+        });
+
+        let itemList = []; 
+        let addBtn = document.querySelector("#add");
+        addBtn.addEventListener("click", addList); // 클릭하면 addList 함수 실행
+
+        function addList(){
+            let item = document.querySelector("#item").value; // 텍스트 필드 내용(콘솔)
+            console.log(item); // 추가 내용 콘솔창 확인
+            if(item != null){
+                // itemList.push(item); // 배열의 맨 뒤에 추가
+                itemList.unshift(item); // 배열의 맨 앞에 추가
+                document.querySelector("#item").value = ""; // 텍스트 필드 내용 지우기
+                document.querySelector("#item").focus; // 텍스트 필드 내용 지우기 
+            }
+            localStorage.setItem("storageList", JSON.stringify(itemList));
+
+            showList();
+        }
+
+        function showList(){
+            let list = "<ul>"; // 목록 시작 <ul>태그 저장
+            for(let i=0; i<itemList.length; i++){
+                // 배열 요소마다 반복
+                list += "<li>" + itemList[i] + "<span class='close' id=" + i + "> X</span></li>"
+            }
+            list += "</ul>"; // list = list + "</ul>" 목록이 끝나는 부분
+            document.querySelector("#itemList").innerHTML = list;
+
+            // 삭제 버튼을 추가
+            let remove = document.querySelectorAll(".close") // 삭제 버튼 변수로 저장.
+            for(let i=0; i<remove.length; i++){
+                remove[i].addEventListener("click", removeList); // 해당 요소 클릭시 removeList()함수 실행
+            }
+        }
+
+        function getItems(){
+            let storedData = localStorage.getItem('storageList');
+            if(storedData != null) itemList = JSON.parse(storedData);
+                showList();
+        }
+        getItems(); // 새로고침해도 저장됨
+        
+        function removeList(){
+            let id = this.getAttribute("id"); // 클릭 id값 가져와 id 변수에 저장
+            itemList.splice(id, 1); // itemList배열에서 인덱스 값이 id인 요소 1개 삭제
+            showList(); // 변경된 부분 화면에 표시 
+            localStorage.setItem("storageList", JSON.stringify(itemList));
+        }
+
+        // 로컬 스토리지 테스트
+    // localStorage.setItem(1, "첫 번째 값")
+    // localStorage.getItem(1) // 키 이름으로 가지고 온다.
+    // localStorage.clear()
+
+    // let array = [1,2,3]
+    // localStorage.setItem('name', JSON.stringify(array));
+    
+    // 로컬 스토리지에서 가지고 오기
+    // localStorage.getItem('storageList');
+    // let todo = localStorage.getItem('name');
+
+    // 여러 값으로 된 문자열을 가져와 배열 형태로 반환할 때는 JSON.parse() 메서드를 사용
+    // JSON(JavaScript Object Notation)은 자료를 주고받는 방식을 가리키는 말로 "제이슨"이라고 함
+    </script>
+</body>
+</html>

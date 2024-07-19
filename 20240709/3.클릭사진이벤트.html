@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 이벤트</title>
+    <style>
+        button{
+            background-color: lightpink;
+            border: 0;
+            padding: 5px;
+        }
+        #open{
+            display: block;
+        }
+        #desc{
+            display: none;
+        }
+        #item img{
+            border: 5px dashed rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <div id="item">
+        <img src="../images/cat.jpg" width="300">
+        <button onclick="showDetail()" id="open">상세 설명 보기</button>
+        <div id="desc">
+            <h4>아무노래</h4>
+            <p>
+                왜들 그리 다운돼있어? 뭐가 문제야 say something<br>
+                분위기가 겁나 싸해 요새는 이런 게 유행인가<br>
+                왜들 그리 재미없어? 아 그건 나도 마찬가지<br>
+            </p>
+            <button onclick="hideDetail()" id="close">상세 설명 닫기</button>
+        </div>
+    </div>
+
+    <script>
+        // 상세 설명 부분을 화면에 표시
+        function showDetail(){
+            document.querySelector('#desc').style.display ='block';
+            document.querySelector('#open').style.display ='none';
+        }
+        // 상세 설명 부분을 화면에서 감춤
+        function hideDetail(){  
+            document.querySelector('#desc').style.display ='none';
+            document.querySelector('#open').style.display ='block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 객체로 배열 만들기</title>
+</head>
+<body>
+    <h3>Array 객체로 배열 만들기</h3>
+    <hr>
+    <div id="view"></div>
+    <script>
+        let degree = new Array();
+        degree[0] = 15.1;
+        degree[1] = 15.4;
+        degree[2] = 16.1;
+        degree[3] = 17.5;
+        degree[4] = 19.2;
+        degree[5] = 21.4;
+
+        let sum = 0;
+        for(let i=0; i<degree.length; i++){
+            sum += degree[i];
+        }
+        document.getElementById("view").innerHTML = ("평균온도는 " + sum/degree.length + "<br>");
+    </script>
+</body>
+</html>

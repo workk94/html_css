@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p219 상대배치</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h3, p, hr {
+            margin: 10px;
+        }
+        div {
+            display: inline-block;
+            width: 160px;
+            height: 200px;
+        }
+        .spade_a {
+            background-image: url(../images/spade-A.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .spade_2 {
+            background-image: url(../images/spade-2.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .spade_3 {
+            background-image: url(../images/spade-3.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .spade_7 {
+            background-image: url(../images/spade-7.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .spade_a:hover {
+            position: relative;
+            left: 20px;
+            top: 20px;
+        }
+
+        .spade_3:hover {
+            position: relative;
+            right: 20px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3>상대 배치, relative</h3>
+    <p>스페이드 A와 스페이드 3에 마우스를 올려보세요</p>
+    <hr>
+    <div class="spade_a"></div>
+    <div class="spade_2"></div>
+    <div class="spade_3"></div>
+    <div class="spade_7"></div>
+</body>
+</html>

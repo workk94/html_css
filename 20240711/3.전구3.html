@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{ width: 300px; height: 300px; }
+    </style>
+</head>
+<body>
+    <p>이미지 직접 클릭</p>
+
+    <img src="../images/on.png" id="myImage"><br>
+    <!-- <img src="../images/off.png" alt=""> -->
+
+    <script>
+        let myImage = document.getElementById('myImage');
+        myImage.onclick = changePic;
+
+        function changePic(){
+            myImage.src = "../images/off.png";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p255 과제</title>
+    <style>
+        div{
+            display: inline-block;
+            border: 2px solid darkcyan;
+        }
+        div#rotate1{
+            animation: rotate1 1s infinite;
+        }
+        div#rotate2{
+            animation: rotate2 1s alternate infinite;
+        }
+        div#extend:hover{
+            
+            transition: all 2s;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+        }
+        @keyframes rotate1 {
+            from{
+                transform: rotate(0deg);
+            }to{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes rotate2{
+            from{
+                transform:rotate(90deg);
+            }to{
+                transform:rotate(-90deg);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>어지러워요</h2>
+    <hr>
+    <div id="rotate1"><img src="../images/mouse-8341314_640.png"></div>
+    <h2>어지러워요2</h2>
+    <hr>
+    <div id="rotate2"><img src="../images/mouse-8341314_640.png"></div>
+    <h2>마우스를 올려봐요</h2>
+    <hr>
+    <div id="extend"><img src="../images/mouse-8341314_640.png"></div>
+</body>
+</html>

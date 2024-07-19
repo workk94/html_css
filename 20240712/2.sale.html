@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="contents">
+        <!-- 이미지 추가 -->
+         <img src="../images/sale.jpg" alt="">
+        <form>
+            <ul>
+                <li>
+                    <label for="oPrice">원래 가격
+                    <input type="text" id="oPrice">원</label>
+                </li>
+                <li>
+                    <label for="">할인율
+                    <input type="text" id="rate">%</label>
+                </li>
+                <button onclick="showPrice()">할인 가격 계산하기</button>
+            </ul>
+        </form>
+    </div>
+    <!-- 결과창 출력할 곳 -->
+    <div class="showResult"></div>
+    <script>
+        function showPrice(){
+            event.preventDefault(); // 새로고침 방지
+            let originPrice = document.getElementById('oPrice').value; // 원래가격
+            // 콘솔창에 document.getElementById('oPrice').value; 입력해보기
+            // 할인율 입력 받은 값이 얼마인지? 변수 선언
+            let rate = document.getElementById('rate').value; // 할인율
+            // 할인금액 = 원래가격 * (할인율/100)
+            let savedPrice = originPrice * (rate / 100)
+            // 최종가격 = 원래가격 - 할인 금액
+            let resultPrice = originPrice - savedPrice;
+            // innerHRML로 결과 div 출력
+            document.querySelector('.showResult').innerHTML = `출력내용 
+            원래가격 ${originPrice}
+            할인률 ${rate}
+            할인금액 ${savedPrice}
+            최종가격 ${resultPrice}`;
+        }
+    </script>
+</body>
+</html>

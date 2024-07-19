@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            margin: 0;
+            background: url(../images/rhino-8795538_1280.jpg) no-repeat;
+            background-size: cover;
+            height: 900px;
+            width: 100%;
+        }
+        .firPart span{
+            color: aliceblue;
+            font-size: 50px;
+            position: absolute;
+            top: 52%;
+            right: 5%;
+            animation: moveIn 2s ease-out;
+        }
+        @keyframes moveIn {
+            from{
+                right: -10%;
+                /* 불투명도 */
+                opacity: 0; 
+            }to{
+                right: 5%;
+                opacity: 0.8;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="firPart">
+            <span> Pour un logiciel CRM, </span><br>
+            <p> simple, complet
+                et intuitif
+            </p>
+        </div>
+        <pre class="secPart">
+            CRM 소프트웨어를 선택하고,
+            간단하고 완전하며
+            직관적인
+        </pre>
+    </section>
+</body>
+</html>

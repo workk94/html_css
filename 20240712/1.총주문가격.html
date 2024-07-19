@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>총 주문 가격 확인</title>
+    <style>
+        h2{
+            background-color: rgb(95, 201, 95);
+        }
+        #container{
+            width: 500px; 
+            background-color: beige;
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>총 주문 가격 확인</h2>
+        <form>
+            <fieldset>
+                <legend>기본가격</legend>
+                <p>30,000원</p>
+            </fieldset>
+            <fieldset>
+                <legend>추가되는 금액</legend>
+                <label><input type="checkbox" class="checkbx" value="1200">기장 추가(1200원)</label>
+                <label><input type="checkbox" class="checkbx" value="3000">배송 비용(3000원)</label>
+                <label><input type="checkbox" class="checkbx" value="800">산간지역 추가 비용(800원)</label>
+                <label><input type="checkbox" class="checkbx" value="4800">양말 2개(4800원)</label>
+                <label><input type="checkbox" class="checkbx" value="2400">선물 포장(2400원)</label>
+            </fieldset>
+            <fieldset>
+                <legend>합계</legend>
+                <input type="text" name="total" id="total" value="" readonly>
+            </fieldset>
+        </form>
+    </div>
+    <script>
+        let price = 30000;
+        let sideMenu = document.querySelectorAll('.checkbx');
+        let total = document.querySelector('#total');
+
+        for(let i = 0; i < sideMenu.length; i++){
+            sideMenu[i].onclick = function(){
+                if(this.checked == true){
+                    price += parseInt(this.value);
+                } else {
+                    price -= parseInt(this.value);
+                }
+                total.value = price + '원';
+            } 
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{ width: 300px; height: 300px; }
+    </style>
+</head>
+<body>
+    <p>마우스 오버 아웃 사용</p>
+
+    <img src="../images/on.png" id="myImage"><br>
+    <!-- <img src="../images/off.png" alt=""> -->
+
+    <script>
+        let myImage = document.getElementById('myImage');
+        myImage.addEventListener('mouseover', changePic1);
+        myImage.addEventListener('mouseout', changePic2);
+
+        function changePic1(){
+            myImage.src = '../images/off.png';
+        }
+        function changePic2(){
+            myImage.src = '../images/on.png';
+        }
+    </script>
+</body>
+</html>

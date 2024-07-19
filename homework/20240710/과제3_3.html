@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>이미지 노드 추가하기</title>
+    <style>
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>웹 문서에 새로운 이미지 노드 추가하기</h1>
+    <button onclick="addImg()">그림 추가</button>
+    
+    <script>
+
+        function addImg(){
+            let newImg = document.createElement("img");
+            let srcNode = document.createAttribute("src");
+            srcNode.value="../images/NewTux.png";
+            newImg.setAttributeNode(srcNode);
+
+            document.body.appendChild(newImg);
+        }
+    </script>
+</body>
+</html>

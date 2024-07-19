@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg {
+            display: inline-block;
+            background-color: black;
+            border: 5px dashed yellowgreen;
+        }
+        #bulb {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <img id="bulb" src="../images/off.png">
+    </div>
+    <div>
+        <button id="bulb-on">켜기</button>
+        <button id="bulb-off">끄기</button>
+    </div>
+        
+    <script>
+        // 1. addEventListener 사용하기  
+        let $bulbOn = document.querySelector("#bulb-on");
+        let $bulbOff = document.querySelector("#bulb-off");
+
+        $bulbOn.addEventListener('click', () => {
+            let $bulb = document.querySelector("#bulb");
+            let $bg = document.querySelector(".bg");
+            $bulb.src = "../images/on.png";
+            $bg.style.backgroundColor = "white";
+        });
+
+        $bulbOff.addEventListener('click', () => {
+            let $bulb = document.querySelector("#bulb");
+            let $bg = document.querySelector(".bg");
+            $bulb.src = "../images/off.png";
+            $bg.style.backgroundColor = "black";
+        });
+        
+        // // 2. onclick 
+        // document.querySelector("#bulb-on").onclick = function() {
+        //     let $bulb = document.querySelector("#bulb");
+        //     let $bg = document.querySelector(".bg");
+        //     $bulb.src = "../images/on.png";
+        //     $bg.style.backgroundColor = "white";
+        // };
+
+        // document.querySelector("#bulb-off").onclick = function() {
+        //     let $bulb = document.querySelector("#bulb");
+        //     let $bg = document.querySelector(".bg");
+        //     $bulb.src = "../images/off.png";
+        //     $bg.style.backgroundColor = "black";
+        // };
+    </script>
+</body>
+</html>

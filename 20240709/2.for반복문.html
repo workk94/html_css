@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for 반복문</title>
+</head>
+<body>
+    <script>
+        // 1부터 5까지 합
+        let sum = 0;
+        sum += 1; // sum = sum + 1 
+        sum += 2; 
+        sum += 3;
+        sum += 4; 
+        sum += 5; 
+        document.write('1부터 5까지 합 ' + sum + '입니다. <br>');
+        document.write(`1부터 5까지 합 ${sum}입니다.<br>`);
+        
+        // for문으로 1부터 5까지 더하기 
+        sumFor = 0;
+        // 1.초기값; 2.조건; 4.증가
+        for(let i = 1; i < 6; i++){
+            sumFor += i; // sum = sum + i(3.실행)
+        }
+        document.write(`1부터 5까지 합 ${sumFor}입니다. <br>`);
+        
+        // for문을 이용해서 1000까지 더하기 - 해보기
+        sum5 = 0;
+        for(let i=1; i<=1000; i++){
+            sum5 += i
+        }
+        document.write(`1부터 1000까지 합 ${sum5}입니다. <br>`);
+
+        // 1 ~ 10 숫자 중 짝수만 더하기 방법1 
+        let evenSum = 0;
+        for(let i=0; i<11; i+=2){
+            evenSum += i
+        }
+        document.write('1부터 5까지 합 ' + evenSum + '입니다. <br>');
+
+        // 짝수 더하기 방법2
+        // let n = 10; 
+        // let sumE = 0;
+        // for(let i = 1; i <= n; i++){
+        //     if(i % 2 === 1) // 1이 홀수이면 건너뜀 
+        //     continue; // 계속하다 
+        //     sumE += i;
+        //     document.write(i + '-----' + sumE +'<br>');
+        // }
+        let sumE = 0;
+        for(let i=1 ; i<=10; i++){
+            if(i%2===0){ // 만약에(조건)
+                sum+=i // 조건에 해당되면 실행
+                document.write(i + '-----' + sumE +'<br>');
+            }
+        }
+
+        // 정수 입력 받아 별 문자 출력
+        // *
+        // **
+        // ***
+        // ****
+        // *****
+        // let input = prompt('정수를 입력해주세요','');
+        // for(let i = 1; i <= input; i++){
+        //     console.log('*'.repeat(i));
+        // }
+
+        // 구구단
+        let result = 0;
+        for(let i = 1; i<=9; i++){
+            for(let j=1; j<=9; j++){
+                result = i * j;
+                console.log(`${i} * ${j} = ${result}`);
+            }
+        }
+        
+
+        // p291
+        // for문은 조건식이 true인 동작 작업문을 반복하여 실행한다
+        // for(let i = 0; i < 10; i++){
+        //     // document.write(i);
+        //     document.writeln(i);
+        // }
+
+        // // hello를 줄바꿈을 5번 찍기
+        // for(let i = 0; i < 5; i++){
+        //     document.write('hello'+ '<br>');
+        // }
+    </script>
+</body>
+</html>

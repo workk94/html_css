@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{height: 100vh;}
+        #container{
+            width: 600px;
+            height: 300px;
+            border: 2px solid lightgray;
+            /* 화살표 위치 양쪽 끝으로 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .arrow{
+            z-index: 100; 
+            font-size: 2em;
+            padding: 10px;
+            background-color: #ddd;
+            color: black;
+            opacity: 0.2; /* 불투명도 0 ~ 1 */
+        }
+        .arrow:hover{
+            cursor: pointer;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h3>다른 이미지를 보려면 좌우 화살표를 눌러보세요</h3>
+    <div id="container">
+    <!-- 유니코드 엔티티코드 -->
+    <div class="arrow" id="left"> &lang; </div>
+    <div class="arrow" id="right"> &rang; </div>
+    </div>
+    <script>
+        const container = document.querySelector('#container'); // 사진영역
+        const pics = ['pic1.png', 'pic2.png', 'pic3.png', 'pic4.png', 'pic5.png'] // 이미지 배열
+
+        container.style.backgroundImage = `url(/images/${pics[0]})`; // 첫번째(0) 이미지  
+        const arrows = document.querySelectorAll('.arrow'); // 화살표 모두 변수
+        let i = 0; // 배열 인덱스
+        arrows.forEach(arrow => {
+            arrow.addEventListener('click', (e) => {
+                if(e.target.id === 'left'){ // 왼쪽 화살표 클릭인지?
+                    i--; // 이전 이미지로 이동 
+                    if(i<0){ // 첫번쨰 이미지?
+                        i = pics.length - 1; // 맨 마지막 이미지로 이동
+                    }
+                }
+                else if(e.target.id === 'right'){// 오른쪽 화살표 클릭인지?
+                    i++; // 다음 이미지로 이동
+                    if(i>=pics.length)// 마지막 이미지라면?
+                        i = 0; // 첫번째 이미지로 이동 
+                } 
+                container.style.backgroundImage = `url(/images/${pics[i]})`;
+            });
+        });
+        // forEach
+    </script>
+</body>
+</html>

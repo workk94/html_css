@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        border: 2px dashed red;
+        width: 100px;
+        height: 100px;
+      }
+      li {
+        list-style: none;
+      }
+      .wrap {
+        border: 1px solid;
+        display: flex;
+        flex-direction: column;
+      }
+      .contents {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .showResult {
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        padding: 5px;
+      }
+      #note-box {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+      }
+      .note {
+        margin: 15px;
+        padding: 10px;
+        background-color: lightblue;
+        border-left: 5px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="note-box"></div>
+
+    <div class="wrap">
+      <div class="contents">
+        <img src="../../images/sale.jpg" alt="" />
+        <form>
+          <ul>
+            <li>
+              <label for="oPrice"
+                >원래 가격 <input type="text" id="oPrice" />원</label
+              >
+            </li>
+            <li>
+              <label for="">할인율 <input type="text" id="rate" />%</label>
+            </li>
+            <button id="btn">할인 가격 계산하기</button>
+          </ul>
+        </form>
+      </div>
+
+      <div class="showResult"></div>
+    </div>
+
+    <script>
+      const noteBox = document.querySelector("#note-box");
+      const btn = document.querySelector("#btn");
+
+      btn.addEventListener("click", showPrice);
+      btn.addEventListener("click", (e) => {
+        e.preventDefault;
+        const note = document.createElement("div");
+        note.classList.add("note");
+        note.innerText = "계산 완료!";
+        noteBox.appendChild(note);
+        setTimeout(() => {
+          note.remove();
+        }, 2000);
+      });
+
+      function showPrice() {
+        event.preventDefault();
+        let originPrice = document.getElementById("oPrice").value;
+        let rate = document.getElementById("rate").value;
+        let savedPrice = originPrice * (rate / 100);
+        let resultPrice = originPrice - savedPrice;
+        document.querySelector(".showResult").innerHTML = `<h3>출력내용</h3> 
+            원래가격 : ${originPrice}<br>
+            할인률 : ${rate}<br>
+            할인금액 : ${savedPrice}<br>
+            최종가격 : ${resultPrice}`;
+      }
+    </script>
+  </body>
+</html>
